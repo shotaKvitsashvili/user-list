@@ -1,0 +1,35 @@
+<div class="user">
+    <div class="text-center mt-5">
+        <h1>USERS</h1>
+    </div>
+
+    <div *ngIf="users">
+        <div class="row">
+            <div *ngFor="let user of users" class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 p-3">
+                <div class="user__card px-3 py-4">
+                    <div class="p-2 m-auto user__icon d-flex align-items-center justify-content-center">
+                        <i class="fa fa-user"></i>
+                    </div>
+
+                    <div class="user__name">
+                        <div class="p-1 text-center">
+                           <span>{{user.name}}</span>
+                        </div>
+                    </div>
+
+                    <div class="pb-2 text-center font-italic">
+                        <span>{{user.email}}</span>
+                    </div>
+
+                    <div class="mt-3">
+                        <a [routerLink]="['/users', user.username]" class="text-decoration-none text-center">
+                            <div class="px-3 py-2 user__button">
+                                See Page
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="user-page d-flex justify-content-center align-items-center">
+    <div *ngIf="userToShow; else noUser">
+        <div class="d-flex flex-column align-items-center">
+            <div class="user-page__icon d-flex align-items-center justify-content-center">
+                <i class="fa fa-user"></i>
+            </div>
+
+            <div class="p-1">
+                <strong> Name</strong>: <i>{{userToShow.name}}</i>
+            </div>
+
+            <div class="p-1">
+                <strong> Username</strong>: <i> {{userToShow.username}}</i>
+            </div>
+
+            <div class="p-1">
+                <strong> E-mail</strong>: <i> {{userToShow.email}}</i>
+            </div>
+
+            <div class="p-1">
+                <strong> Phone</strong>: <i> {{userToShow.phone}}</i>
+            </div>
+
+            <div class="p-1">
+                <strong>Company Name</strong>: <i>{{userToShow.company.name}}</i>
+            </div>
+
+            <div class="py-4 px-1">
+                <a class="text-decoration-none" [routerLink]="['/user-posts/', userToShow.username]">
+                    <div class="user-page__see-more px-3 py-2"> See User Posts </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #noUser>
+        <div class="faded" id="no-user">
+            <h1>User not found</h1>
+        </div>
+    </ng-template>
+</div>
