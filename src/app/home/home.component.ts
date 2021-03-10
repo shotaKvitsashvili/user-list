@@ -15,13 +15,6 @@ export class HomeComponent implements OnInit {
   constructor(private _http: HttpService) { }
 
   ngOnInit(): void {
-
-    // Using getUserList() function to get users
-
-    // this._http.getUserList().subscribe(data => {
-    //   this.users = data;
-    // });
-
    this._http.getUserList().then(data => {
      this.users = data;
    });  

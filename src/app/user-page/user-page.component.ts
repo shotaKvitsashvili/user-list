@@ -38,16 +38,10 @@ export class UserPageComponent implements OnInit {
     // Filtering data to show for unique user 
 
     this.route.params.subscribe(params => {
-      // this._http.getUserList().subscribe(data => {
-      //   this.users = data;
-      //   this.userToShow = this.users.find(e => e.username === params.id);
-      // });
-
       this._http.getUserList().then(data => {
           this.users = data;
           this.userToShow = this.users.find((e: { username: any; }) => e.username === params.id);
       });
     });
   }
-
 }

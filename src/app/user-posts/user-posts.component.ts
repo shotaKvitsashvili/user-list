@@ -45,5 +45,4 @@ export class UserPostsComponent implements OnInit {
       });
     })
   }
-
 }
